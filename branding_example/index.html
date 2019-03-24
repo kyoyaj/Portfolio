@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="theme-color" content="#000000" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <title>Modifying DOM</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="branding.js"></script>
+    <link rel="stylesheet" type="text/css" href="branding.css" />
+  </head>
+  <body>
+    <div id="brandingInputs">
+        <form>
+            <div class="brandingDiv">
+                <div class="labelWrapper">
+                <label>Shape: </label>
+                </div>
+                <select id="shape">
+                    <option id="default"></option>
+                    <option id="circle">Circle</option>
+                    <option id="square">Square</option>
+                </select>
+            </div>
+            <div class="brandingDiv">
+                <div class="labelWrapper">
+                <label>Border Color: </label>
+                </div>
+                <input id="borderColorInput" type='text'>
+            </div>
+            <div class="brandingDiv">
+                    <div class="labelWrapper">
+                    <label>Background Color: </label>
+                    </div>
+                    <input id="backgroundColorInput" type='text'>
+            </div>
+        </form>
+    </div>
+    </div>
+    <div id="output">
+        <div id="newShape"></div>
+    </div>
+  </body>
+</html>
