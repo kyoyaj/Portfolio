@@ -10,7 +10,8 @@ form input{
     width: calc(100% - 30px);
     padding: 10px;
 }
-[error-flag="true"] {
+input[error-flag="true"],
+[error-flag="true"] input {
   border: 1px solid red;
 }
 label[for='switch_left'],

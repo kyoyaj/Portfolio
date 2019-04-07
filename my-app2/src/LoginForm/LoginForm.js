@@ -13,6 +13,7 @@ class LoginForm extends React.Component {
         messageField: '',
         signUp: false,
         formValid: false,
+        emailSignup: 'Yes',
         formErrors: {
             username: false, 
             email:false, 
@@ -40,15 +41,18 @@ class LoginForm extends React.Component {
       this.state.formErrors.username = errors.username;
       this.state.formErrors.email = errors.email;
       this.state.formErrors.location = errors.location;
-
+      
       return;
     } else {
       // check to see if all required field filled out
-      //let userNameVal = 'Tony';
       this.props.updateUserName(this.state.username);
       let status = 'SIGN_UP_SUCCESS';
       this.props.changeLoginStatus(status);
     }
+  }
+
+  handleSignupChange = e => {
+      this.setState({emailSignup: e.target.value});
   }
 
   handleUsernameChange = e => {
@@ -93,8 +97,10 @@ class LoginForm extends React.Component {
                   <input type="text" className={defaultInputTextClasses} placeholder="Email" name="email" id="email" 
                   error-flag={this.state.formErrors.email.toString()} onChange={this.handleEmailChange} value={this.state.email} />
                 </div>
+                <div className="form-field" error-flag={this.state.formErrors.location.toString()}>
                 <Typeahead id="locationInput" labelKey="name" options={this.locationList} placeholder="Location" 
-                  error-flag={this.state.formErrors.location.toString()} onChange={this.handleLocationChange}/>
+                 onChange={this.handleLocationChange}/>
+                </div>
               <div className="form-field">
                 <textarea className={defaultInputTextClasses} placeholder="Message for Troops" name="messageField" 
                   id="messageField" rows="5" maxLength="65535" onChange={this.handleMessageChange} value={this.state.message}/>
@@ -102,9 +108,11 @@ class LoginForm extends React.Component {
               <div className="form-field">
                 <label className="form-label">Email Signup?</label>
                 <div className="switch-field">
-                  <input type="radio" id="switch_left" name="signUp" value="No"/>
+                  <input type="radio" id="switch_left" name="signUp" value="No" 
+                  onChange={this.handleSignupChange} checked={this.state.emailSignup === 'No'} />
                   <label htmlFor="switch_left">No</label>
-                  <input type="radio" id="switch_right" name="signUp" value="Yes" checked="checked"/>
+                  <input type="radio" id="switch_right" name="signUp" value="Yes" 
+                  onChange={this.handleSignupChange} checked={this.state.emailSignup === 'Yes'}/>
                   <label htmlFor="switch_right">Yes</label>    
                 </div>
               </div>
