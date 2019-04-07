@@ -1,28 +1,26 @@
-.footer-buttons{
-    padding-inline-start: 0px;
-    display:flex;
+.weather-name,
+.weather-msg{
+    padding:20px;
+    font-size:18px;
+    color:#303077;
 }
-.openInButton{
-    padding: 5px;
-    width: 100%;
-    list-style-type:none;
 
+.weather-date{
+    font-size:14px;
+    color:#377ab5;
+    font-weight:bold;
 }
-.openInButton img{
-    height:18px;
-    margin-right:10px;
-    vertical-align: middle;
+.weather-column{
+    text-align:center;
 }
-.openInButton a{
-    border:1px solid blue;
-    padding:10px 20px;
-    text-decoration:none;
-    font-weight: 700;
-    border-radius: 4px;
-    font-size:13px;
-    display:block;
+
+.weather-temp{
+    display:flex;
+    flex-direction:column;
 }
-.bing a{
-    background:#00897a;
-    color:#FFF;
+.weather-condition-div{
+    padding:10px 0px;
+}
+.weather-condition-div *{
+    padding-left:10px;
 }

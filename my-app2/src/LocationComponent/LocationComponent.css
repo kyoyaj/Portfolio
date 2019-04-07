@@ -22,7 +22,8 @@
     font-size:13px;
     display:block;
 }
-.bing a{
+.openInButton.bing a{
     background:#00897a;
     color:#FFF;
+    border-color:#00897a;
 }

@@ -5,7 +5,7 @@ import LoginForm from './LoginForm/LoginForm';
 import MenuNav from './MenuNav/MenuNav';
 import HeadingText from './HeadingText/HeadingText';
 import WeatherComponent from './Weather/WeatherComponent';
-import { SSL_OP_ALLOW_UNSAFE_LEGACY_RENEGOTIATION } from 'constants';
+import CareersComponent from './CareersComponent/CareersComponent';
 
 class App extends Component {
   constructor(props) {
@@ -33,7 +33,6 @@ class App extends Component {
     } else {
       this.setState({location: location[0].value, locationName: location[0].name});
     }
-    
   }
 
   /* Gotta update the landing page view */
@@ -70,17 +69,20 @@ class App extends Component {
       const isSignedUp = this.state.signedUp;
       const view = this.state.view;
       let loginComponent = '';
+      let careersComponent = '';
       let locationComponent = '';
       let weatherComponent = '';
 
       /* Easier to set up the view here */
       if (!isSignedUp){
-        loginComponent = <LoginForm updateLocation={this.updateLocation} updateUserName={this.updateUserName} changeLoginStatus={this.updateLandingPageView}/>
+        loginComponent = <LoginForm updateLocation={this.updateLocation} updateUserName={this.updateUserName} changeLoginStatus={this.updateLandingPageView}/> 
+        careersComponent = <CareersComponent isRegistered={this.state.signedUp} />
       } 
       if (view !== 'WEATHER_VIEW'){
           locationComponent = <LocationComponent location={this.state.location}/>
+          careersComponent = <CareersComponent isRegistered={this.state.signedUp} />
       } else {
-          weatherComponent = <WeatherComponent location={this.state.location}/>;
+          weatherComponent = <WeatherComponent locationName={this.state.locationName} location={this.state.location}/>;
       }
     return (
       <div>
@@ -89,6 +91,7 @@ class App extends Component {
       <HeadingText textTitle={this.state.headingText}/>
       <div className='mainSection'>
       {loginComponent}
+      {careersComponent}
       {locationComponent}
       {weatherComponent}
       </div>

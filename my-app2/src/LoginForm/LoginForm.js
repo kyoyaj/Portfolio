@@ -52,23 +52,31 @@ class LoginForm extends React.Component {
   }
 
   handleSignupChange = e => {
-      this.setState({emailSignup: e.target.value});
+    if (!e) return;
+    this.setState({emailSignup: e.target.value});
   }
 
   handleUsernameChange = e => {
+    if (!e) return;
     this.setState({ username: e.target.value });
   }
   
   handleEmailChange = e => {
+    if (!e) return;
     this.setState({ email: e.target.value });
   }
 
   handleLocationChange = e => {
+    // Using typeahead so if type value is not in list then e would be empty 
+    if (e.length == 0) return;
+    //Hmmm... probably a better way of handling location input again but I guess I would need to look
+    //into this typeahead lib... for now, let's just assume user picks something fron dropdown
     this.setState({ location: e[0].value });
     this.props.updateLocation(e)
   }
 
   handleMessageChange = e => {
+    if (!e) return;
     this.setState({ message: e.target.value });
   }
   render() {

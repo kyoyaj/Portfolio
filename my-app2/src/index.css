@@ -4,12 +4,7 @@ body{
   padding:0;
   margin:0;
 }
-h1{
-  font-size:35px;
-  color:#383884;
-  text-align:left;
-  margin-left:10px;
-}
+
 h3{
   font-size:15px;
   color:#303077;
@@ -20,8 +15,10 @@ div#app{
 }
 
 div.mainSection{
-  display:block;
+  display:flex;
+  flex-wrap:wrap;
 }
+
 section{
     width:auto !important;
 }
@@ -30,14 +27,19 @@ div.mainSection > div {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   margin: 10px;
   min-width:300px !important;
-  display:inline-block;
   vertical-align: top;
-  float:left;
+  height:max-content;
 }
 
-@media all and (max-width:600px){
+@media all and (max-width:400px){
   div.mainSection{
     display:flex;
     flex-direction: column;
  }
+}
+
+@media all and (max-width:650px){
+  div.mainSection{
+    justify-content: space-evenly; 
+  }
 }

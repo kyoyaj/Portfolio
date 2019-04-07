@@ -3,6 +3,7 @@
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
+
 form input{
     border:1px solid #d7d7d7;
     border-radius:4px;
@@ -10,14 +11,17 @@ form input{
     width: calc(100% - 30px);
     padding: 10px;
 }
+
 input[error-flag="true"],
 [error-flag="true"] input {
   border: 1px solid red;
 }
+
 label[for='switch_left'],
 label[for='switch_right']{
   cursor: pointer;
 }
+
 input[type='submit']{
     border:0px;
     border-top:1px solid #d7d7d7;
@@ -29,13 +33,13 @@ input[type='submit']{
     border-radius:0px;
     padding:15px;
 }
+
 label.form-label {
   color: #303077;
   font-size: 14px;
   line-height: 28px;
   font-weight: bold;
 }
-
 
 .login-container{
     padding: 20px 20px 0 20px;
@@ -44,25 +48,30 @@ label.form-label {
  div.form-field{
      padding:5px 0px;
  }
+
  .form-field.submit-field{
    padding-bottom:0px;
  }
+
  button.submitBtn{ 
      bottom:0;
      left:0px;
  }
+
  .switch-field {
   text-transform: uppercase;
   overflow: hidden;
 }
+
 .switch-field input {
-    position: absolute !important;
-    clip: rect(0, 0, 0, 0);
-    height: 1px;
-    width: 1px;
-    border: 0;
-    overflow: hidden;
+  position: absolute !important;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  width: 1px;
+  border: 0;
+  overflow: hidden;
 }
+
 .switch-field label {
   display: inline-block;
   min-width:70px;

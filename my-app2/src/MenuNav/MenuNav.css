@@ -10,11 +10,13 @@
     justify-content: left;
     width: 100%;
     padding:20px 5px;
-  }
+}
+
 .header-item{
     align-self:stretch;
     margin-right:16px;
 }
+
 .header-item a {
     color:#FFF;
     padding: 17px;
@@ -23,6 +25,7 @@
     cursor: pointer;
     text-decoration: none;
 }
+
 .header-item a.selected {
     background:#0078ff;
 }
