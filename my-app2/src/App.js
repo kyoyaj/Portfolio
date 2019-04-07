@@ -73,7 +73,7 @@ class App extends Component {
       let locationComponent = '';
       let weatherComponent = '';
 
-      /* Easier to set up the view here */
+      // Easier to set up the view here
       if (!isSignedUp){
         loginComponent = <LoginForm updateLocation={this.updateLocation} updateUserName={this.updateUserName} changeLoginStatus={this.updateLandingPageView}/> 
         careersComponent = <CareersComponent isRegistered={this.state.signedUp} />

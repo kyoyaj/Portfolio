@@ -1,13 +1,7 @@
-
 .careers-column img{
     max-width:300px;
 }
-@media all and (max-width:400px){
-    .careers-msg,
-    .careers-column img{
-        max-width:100% !important;
-    }
-}
+
 .careers-msg{
     color: #999;
     font-size:13px;
@@ -25,4 +19,11 @@
     font-weight:bold;
     color:#303077;
     line-height:25px;
+}
+
+@media all and (max-width:400px){
+    .careers-msg,
+    .careers-column img{
+        max-width:100% !important;
+    }
 }
