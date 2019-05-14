@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+  <title>jQuery movie search</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="movie_search.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+
+  <script src="movie_search.js"></script>
+</head>
+<body>
+  <div class="container-fluid">
+    <h1>jQuery Movie Search</h1>
+    <form name="movieSearchForm" id="movieSearchForm">
+
+      <div class="input-group md-form form-sm form-2 pl-0">
+          <label for="searchMovieInput" class="sr-only">Search Movie</label>
+          <input class="form-control my-0 py-1 red-border" type="text" id="movieTitle" name="movieTitle" placeholder="Search Movie..." aria-label="Search Movie...">
+          <div class="input-group-append">
+           
+            <button type="submit" class="input-group-text red lighten-3" id="searchMovieBtn"><i class="fas fa-search text-grey" aria-hidden="true"></i></span>
+          </div> 
+        </div>
+
+    </form>
+  </div>
+  <div class="movieResults d-flex flex-wrap">
+
+  </div>
+</body>
+</html>

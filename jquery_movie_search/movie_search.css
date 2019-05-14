@@ -1,0 +1,40 @@
+div.posterImg img{
+    height:300px;
+}
+
+.h1 {
+    font-size:30px;
+}
+
+.movieResults h2{
+    font-size:20px;
+    width:250px;
+    min-height:50px;
+}
+
+h1,
+.movieResults {
+    text-align:center;
+}
+
+.movieBlock{
+    padding:10px;
+}
+
+.movieYear {
+    display:block;
+    font-size:15px;
+    font-weight:bold;
+}
+
+.movieResults{
+    margin-top:50px;
+}
+
+body{
+    background:#797ca2c4;
+}
+
+.no-results{
+    margin-left:20px;
+}
