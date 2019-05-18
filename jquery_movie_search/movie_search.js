@@ -26,14 +26,14 @@ var movieSearch = movieSearch || {
 		} else {
 			// Parse through all movie result items
 			$(data.Search).each(function(iCnt){
-				movieSearch.createMovieBlock($(this)[0], iCnt);
+				movieSearch._createMovieBlock($(this)[0], iCnt);
 			});	
 		}
 
 		return;
 	},
 
-	createMovieBlock: function(data, currentCount){
+	_createMovieBlock: function(data, currentCount){
 		let movieTitle = data.Title;
 		let movieYear = data.Year;
 		let moviePoster = data.Poster;
