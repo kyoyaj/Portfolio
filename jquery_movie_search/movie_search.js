@@ -1,3 +1,4 @@
+"use strict";
 /**
  * movieSearch
  * The actual movie search functionality
@@ -24,22 +25,43 @@ var movieSearch = movieSearch || {
 			$('.movieResults').html('<div class="no-results">No movie results. Try again.</div>');
 		} else {
 			// Parse through all movie result items
-			$(data.Search).each(function(){
-				movieSearch.createMovieBlock($(this)[0]);
+			$(data.Search).each(function(iCnt){
+				movieSearch.createMovieBlock($(this)[0], iCnt);
 			});	
 		}
 
 		return;
 	},
 
-	createMovieBlock: function(data){
+	createMovieBlock: function(data, currentCount){
 		let movieTitle = data.Title;
 		let movieYear = data.Year;
 		let moviePoster = data.Poster;
+		currentCount++;
+		let movieTitleID = "movieTitle" + currentCount;
+		let movieYearID = "movieYear" + currentCount;
+		let imdbID = data.imdbID;
 		
-		$('.movieResults').append($('<div class="movieBlock"><h2 class="movieTitle">' + movieTitle + 
-			'</h2><div class="posterImg"><img src="' + moviePoster + '"</div><span class="movieYear">'
-			 + movieYear + '</span></div>'));
+		let resultsHTML = '<div class="movieBlock" movie-imdbid="' + imdbID + '" movie-title="' + movieTitle + '" movie-year="' + movieYear + '" movie-poster="' + moviePoster + '">'+
+							'<div class="posterImg"><img src="' + moviePoster + '"/></div><div class="moveieInfo"><h2 class="movieTitle"><label for="' + movieTitleID +'">' + 
+							'Title: </label><span id="' + movieTitleID + '">' + movieTitle +  '</span></h2><div class="movieYear"><label for="' + movieYearID + '">' + 
+							'Year: </label><span class="' + movieYearID + '">' + movieYear + '</span></div></div><div class="updateStat">';
+		
+		if (!movieState.getFavorites(imdbID)){
+			resultsHTML += '<div class="addToFavorites"><label for="favStar"></label><i onclick="movieState.updateFav(this)" class="fa fa-heart-o" aria-hidden="true"></i></div>'
+		} else {
+			resultsHTML += '<div class="addToFavorites"><label for="favStar"></label><i onclick="movieState.updateFav(this)"  class="fa fa-heart" aria-hidden="true"></i></div>'
+		}
+
+		if (!movieState.getWatchList(imdbID)){
+			resultsHTML += '<div class="addToWatchList"><label for="watchEye"></label><i onclick="movieState.updateWatch(this)" class="fa fa-star-o" aria-hidden="true"></i><div>'
+		} else {
+			resultsHTML += '<div class="addToWatchList"><label for="watchEye"></label><i onclick="movieState.updateWatch(this)" class="fa fa-star" aria-hidden="true"></i><div>'
+		}
+
+		resultsHTML += '</div></div>';
+
+		$('.movieResults').append($(resultsHTML));	
 	},
 
 	/**
